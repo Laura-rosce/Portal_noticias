@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="port-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de notícias-G1 </title>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin:0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header{
+            background-color: red;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-gap: 20px;
+            grid-template-columns: repeat(3,1fr);
+        }
+
+        section{
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h2{
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .news {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article {
+            margin-bottom: 20px;
+        }
+
+        .article h3 {
+            color: #333;
+        }
+
+        .article p {
+            color: #666;
+        }
+
+        .article a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .article a:hover {
+            text-decoration: underline;
+        }
+
+        .videos {
+            display: grid;
+            grid-gap: 10px;
+        }
+
+        .weather {
+            color: #333;
+            padding-top: 30px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            margin-left: 0;
+        }
+
+    </style>
+
+</head>
+<body>
+    <header> 
+        <h1> Portal de Notícias</h1>
+    </header>
+
+    <script>
+        class Componente extends HTMLElement{
+            
+            connectedCallback(){
+                const div = document.createElement("div");
+                div.classNasc = "card ab-3 mt-3";
+                div.innerHTML = 'Hello, World!';
+                this.appendChild(div);
+            }
+        }
+
+    
+       customElements.define("componente-novo", Componente);
+    </script>
+
+    <main class="container">
+        <!--<componente-novo/>-->
+        <section class="news-section">
+            <h2> Últimas notícias</h2>
+            <div class="news">
+                <article>
+                    <h3>Homem cai do telhado</h3>
+                    <img src="download.jfif" height="200px" width="300px">
+                    <p> Francisco Pereira sofreu um grav acidente neste domingo</p>
+                    <a href = "#">Leia mais</a>
+                </article>
+                <article>
+                    <h3>Joana ganha competição culinária</h3>
+                    <p>Joana, mais conhecida como tia Lena, ganhou a competição de culinária.</p>
+                    <a href="#"> Leia mais </a>
+                </article>
+                <article>
+                    <h3>Jubiscleu ganhou na loteria!</h3>
+                    <p>Jubiscleu foi premiado nesse sábado com o bilhete da sorte!</p>
+                    <a href="#"> Leia mais</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="videos-section">
+            <h2>Vídeos em destaque</h2>
+            <div class="videos">
+                <iframe widht="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                <iframe widht="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="weather-section">
+            <h2>Previsão do Tempo</h2>
+            <div id="cont_9628c9cdc50a1204ab32c5a71fa2990d">
+                <script type="text/javascript" async src="https://www.tempo.com/wid_loader/9628c9cdc50a1204ab32c5a71fa2990d"></script>
+            </div>
+        </section>
+ 
+        <footer>
+            <p>&copy; 2024 Portal de Notícias. Todos os direitos reservados.</p>
+        </footer>
+        
+
+    </main>
+
+
+    
+    
+</body>
+</html>
